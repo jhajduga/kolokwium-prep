@@ -1,0 +1,77 @@
+PI — Kolokwium (Linux + Skrypty + Git)
+======================================
+Poniżej *przykładowa* sekwencja komend, które (teoretycznie) wystarczą,
+żeby zrealizować wszystkie zadania. Dopasuj ścieżki/nazwy do własnego środowiska.
+
+
+0) Fork -> Clone -> Branch
+--------------------------
+# (W przeglądarce) Kliknij "Fork" na repo prowadzącego -> Twój profil.
+
+# Na maszynie w labie:
+git clone <ADRES_TWOJEGO_FORKA>     # SSH lub HTTPS
+cd <NAZWA_KATALOGU_REPO>            # np. cd pi-kolokwium-template
+
+git remote -v
+# (opcjonalnie) podłącz upstream, jeśli chcesz:
+# git remote add upstream <ADRES_REPO_PROWADZACEGO>
+# git fetch upstream
+
+git checkout -b kolokwium/<TwojLogin>
+
+
+1) Zadanie 1 — struktura i przekierowania
+-----------------------------------------
+# 1. Katalogi out/ i work/notes/ (jednym poleceniem dla każdego):
+mkdir -p out
+mkdir -p work/notes
+
+# 2. Lista plików z katalogu domowego (ukryte + rozmiary czytelne):
+ls -lah ~ > out/ls_home.txt
+
+# 3. Linijki z 'ERROR' lub 'WARN' (bez rozróżniania wielkości liter):
+grep -Ei 'error|warn' data/logs/system.log > out/warn_err.txt
+
+
+
+2) Zadanie 2 — find/xargs i liczenie linii CSV
+-----------------------------------------------
+# Bezpieczne liczenie linii we wszystkich *.csv (rekurencyjnie):
+find data/csv -type f -name '*.csv' -print0  | xargs -0 cat | wc -l > out/lines_csv.txt
+
+# (Alternatywa bez xargs: pętla)
+# find data/csv -type f -name '*.csv' -print0 # | while IFS= read -r -d '' f; do cat -- "$f"; done | wc -l > out/lines_csv.txt
+
+
+3) Zadanie 3 — skrypt report.sh
+--------------------------------
+# Uruchomienie skryptu (TOP-5 największych podkatalogów + timestamp):
+bash scripts/report.sh data
+
+# Wersja "dry-run" (jeśli zaimplementowana):
+bash scripts/report.sh -n data
+
+# Warianty sortowania (w samym skrypcie zazwyczaj nie trzeba nic zmieniać):
+# GNU coreutils (z sort -h):
+#   du -sh "$DIR"/* 2>/dev/null | sort -h | tail -5
+# Fallback (bez -h):
+#   du -s  "$DIR"/* 2>/dev/null | sort -n | tail -5
+
+
+4) Git — commity, push, PR
+--------------------------
+git status
+git add out/*.txt scripts/report.sh
+git commit -m "zad1: struktura + przekierowania; zad2: CSV; zad3: report.sh"
+git push -u origin kolokwium/<TwojLogin>
+
+# (W przeglądarce) Otwórz PR **do własnego forka** (nie do upstream).
+# W opisie PR napisz 1–3 zdania: co było OK i co sprawiło trudność.
+
+
+Dodatkowe uwagi
+----------------
+- Cytuj ścieżki z odstępami: np. "Moje pliki/plik.txt"
+- Nie parsuj `ls`; używaj `find`, globów i bezpiecznych pętli (print0/xargs -0).
+- Jeśli jakaś komenda nie jest dostępna (np. sort -h), użyj wariantu fallback.
+- Sprawdzaj statusy poleceń (kod wyjścia), czytaj komunikaty błędów na stderr.

@@ -7,9 +7,7 @@
    **Wymagane:** `ls -lah ~ > out/ls_home.txt`
 3. Z pliku `data/logs/system.log` wypisz linie zawierające `ERROR` lub `WARN` (case-insensitive) do `out/warn_err.txt`. **(4 pkt)**  
    **Wskazówka:** `grep -Ei 'error|warn' data/logs/system.log > out/warn_err.txt`
-<!-- 4. Z pliku `data/lorem.txt` przygotuj listę 10 najczęstszych słów (bez interpunkcji, małe litery) do `out/top_words.txt`. **(3 pkt)**  
-   **Wskazówka:**  
-   `tr -cs '[:alnum:]' '\n' < data/lorem.txt | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr | head -10 > out/top_words.txt` -->
+
 
 ---
 

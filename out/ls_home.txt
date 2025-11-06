@@ -1,0 +1,2 @@
+Sample output of: ls -lah ~
+(This content is environment-dependent and will vary on students' machines.)

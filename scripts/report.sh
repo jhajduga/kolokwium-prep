@@ -19,14 +19,18 @@ fi
 
 date +"%F %T"
 
-# TOP-5 podkatalogów wg rozmiaru (human)
-# Jeżeli 'sort -h' nie jest dostępne, można zastąpić: 'du -s' + 'sort -n'
-if command -v sort >/dev/null 2>&1 && sort --help 2>&1 | grep -q -- "-h"; then
-  du -sh "$DIR"/* 2>/dev/null | sort -h | tail -5
-else
-  du -s "$DIR"/* 2>/dev/null | sort -n | tail -5
-fi
+show_top() {
+  local d="$1"
+  if sort --help 2>&1 | grep -q -- "-h"; then
+    du -sh "$d"/* 2>/dev/null | sort -h | tail -5
+  else
+    du -s "$d"/* 2>/dev/null | sort -n | tail -5
+  fi
+}
 
 if (( DRYRUN )); then
-  echo "DRY-RUN: to tylko podgląd (nie wykonano operacji modyfikujących)"
+  echo "DRY-RUN: pokażę co BY zostało wypisane:"
+  show_top "$DIR"
+else
+  show_top "$DIR"
 fi

@@ -1,0 +1,34 @@
+total 181K
+drwxr-xr-x  16 5pazera 2025   33 Nov 10 11:42 .
+drwxr-xr-x 271 root    root  271 Oct 23 10:32 ..
+-rw-------   1 5pazera 2025 3.9K Nov  9 20:10 .bash_history
+-rw-r--r--   1 5pazera 2025  220 Oct  9 13:26 .bash_logout
+-rw-r--r--   1 5pazera 2025 3.5K Oct 16 14:58 .bashrc
+-rw-r--r--   1 5pazera 2025 3.5K Oct  9 13:26 .bashrc.dpkg-old
+drwxr-xr-x   2 5pazera 2025    5 Nov  9 17:45 bin
+drwxr-xr-x  10 5pazera 2025   12 Nov  6 14:52 .cache
+drwx------  13 5pazera 2025   15 Oct  9 14:59 .config
+drwxr-xr-x   6 5pazera 2025    6 Nov 10 11:15 Desktop
+-rw-r--r--   1 5pazera 2025   23 Oct 16 13:19 .dmrc
+drwxr-xr-x   2 5pazera 2025    2 Oct 16 15:09 Documents
+drwxr-xr-x   2 5pazera 2025    4 Nov  6 15:09 Downloads
+-rw-r--r--   1 5pazera 2025 5.2K Oct  9 13:26 .face
+lrwxrwxrwx   1 5pazera 2025    5 Oct  9 13:26 .face.icon -> .face
+-rw-r--r--   1 5pazera 2025   92 Oct 30 14:39 .gitconfig
+-rw-r--r--   1 5pazera 2025 2.1K Oct  9 13:26 .kshrc
+-rw-------   1 5pazera 2025   20 Nov 10 11:42 .lesshst
+drwx------   4 5pazera 2025    4 Oct  9 13:28 .local
+drwx------   4 5pazera 2025    4 Oct 16 13:22 .mozilla
+drwxr-xr-x   2 5pazera 2025    2 Oct  9 13:28 Music
+-rw-r--r--   1 5pazera 2025  115 Oct 23 13:35 .nanorc
+drwxr-xr-x   2 5pazera 2025    2 Oct  9 13:28 Pictures
+-rw-------   1 5pazera 2025  12K Oct 16 13:27 .plik.txt.swp
+-rw-r--r--   1 5pazera 2025  807 Oct  9 13:26 .profile
+drwxr-xr-x   2 5pazera 2025    2 Oct  9 13:28 Public
+drwx------   2 5pazera 2025    6 Oct 30 14:32 .ssh
+drwxr-xr-x   2 5pazera 2025    2 Oct  9 13:28 Templates
+drwxr-xr-x   2 5pazera 2025    2 Oct  9 13:28 Videos
+-rw-------   1 5pazera 2025  868 Oct 10 18:43 .viminfo
+-rw-------   1 5pazera 2025    0 Nov  6 15:37 .Xauthority
+-rw-------   1 5pazera 2025 8.6K Nov  6 15:37 .xsession-errors
+-rw-------   1 5pazera 2025 6.3K Oct 30 15:28 .xsession-errors.old
